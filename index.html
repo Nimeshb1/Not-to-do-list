@@ -20,8 +20,87 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="btn btn-danger">
-        asdfasdf <i class="fa-solid fa-code"></i>
+      <div class="container">
+        <!-- top title -->
+        <div class="row">
+          <div class="col text-center mt-5"><h1>Not to do list</h1></div>
+        </div>
+        <!-- Form Area -->
+        <form action="javascript:void(0)" onsubmit="handelonSubmit(this)">
+        <div class="row mt-e g-2">
+          <div class="col-md-7">
+            <input
+            name="task"
+              type="text"
+              class="form-control"
+              placeholder=''
+              aria-label="First name"
+              required
+            />
+          </div>
+          <div class="col-md-2">
+            <input
+            name="hr"
+              type="Number"
+              class="form-control"
+              placeholder=''
+              aria-label="Last name"
+              required
+            />
+          </div>
+
+          <div class="col-md-3 d-grid gap-2">
+            <button class="btn btn-primary" type="submit"><i class="fa-solid fa-plus"></i> Add New Task</button>
+            
+          </div>
+          
+</form>
+
+        <!-- list area -->
+        <div class="row ">
+            <div class="col-md mt-5 ">
+        <ul class="list-group">
+            <li class="list-group-item active text-center" aria-current="true">Entry List</li>
+            <table class="table table-striped table-hover">
+             
+                <tbody id="task-list">
+
+              
+                </tbody>
+              </table>
+          </ul>
+
+
+          <button class="btn btn-primary">Clear All</button>
+        </div>
+
+        <div class="col-md mt-5 ">
+            <ul class="list-group">
+                <li class="list-group-item active text-center" aria-current="true">Bad list</li>
+                <table class="table table-striped table-hover">
+             
+                    <tbody id="bad_list">
+             
+    
+                 
+
+                    </tbody>
+                  </table>
+              </ul>
+
+
+              <div class="text-end">You could have saved = <span id="badtllt">0</span>hrs
+            </div>
+    </div>
+
+
+        <!-- total -->
+<div class="row fw-bold" >
+    <div class="col">
+        THe Total hours allocted = <span id="totalhrs">0</span>hrs
+    </div>
+</div>
+
       </div>
     </div>
     <script src="script.js"></script>
