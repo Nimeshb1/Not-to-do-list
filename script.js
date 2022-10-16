@@ -67,11 +67,12 @@ const displayTasks = () => {
      <button onclick ="markasNottoDO(${i})"class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i></button></td>
    </tr>`;
   });
+  console.log(taskList);
 
   document.getElementById("task-list").innerHTML = str;
   innerHTML = str;
   clearall();
-  clearnotdesplaywhiledel;
+  clearnotdesplaywhiledel();
 };
 
 const totalTaskHours = () => {
@@ -85,10 +86,6 @@ const totalTaskHours = () => {
 };
 
 const deleteTask = (i) => {
-  if (!window.confirm("Are you sure you want to delte this task")) {
-    return;
-  }
-
   taskList = taskList.filter((elm, index) => index !== i);
   totalTaskHours();
   displayTasks();
