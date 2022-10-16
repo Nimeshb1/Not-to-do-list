@@ -1,12 +1,38 @@
 //get data from data in form submit,
 // store that data in a global array
 // careate a display function to display all the data form array to out entery list
-let emptyarr = [];
+
 let taskList = [];
 
 let badlist = [];
 
 const hrperWeek = 24 * 7;
+
+const notdesplay = () => {};
+
+notdesplay();
+
+const clearall = () => {
+  str = "";
+
+  str += ` <button  onclick="clearfun()" id="bute" class="btn btn-primary">Clear All</button>
+</div>`;
+
+  document.getElementById("clear").innerHTML = str;
+};
+
+const clearfun = () => {
+  taskList = [];
+
+  badlist = [];
+  displayTasks();
+  displaybadtask();
+  totalTaskHours();
+
+  document.getElementById("totalhrs").innerText = 0;
+
+  document.getElementById("clear").innerHTML = "";
+};
 
 const handelonSubmit = (e) => {
   const frmdata = new FormData(e);
@@ -44,6 +70,8 @@ const displayTasks = () => {
 
   document.getElementById("task-list").innerHTML = str;
   innerHTML = str;
+  clearall();
+  clearnotdesplaywhiledel;
 };
 
 const totalTaskHours = () => {
@@ -84,6 +112,14 @@ const displaybadtask = () => {
   });
   document.getElementById("bad_list").innerHTML = str;
   totalbadTaskHours();
+
+  clearnotdesplaywhiledel();
+};
+
+const clearnotdesplaywhiledel = () => {
+  if (taskList.length === 0 && badlist.length === 0) {
+    document.getElementById("bute").style.display = "none";
+  }
 };
 
 const markasNottoDO = (i) => {
@@ -121,5 +157,3 @@ const totalbadTaskHours = () => {
 
   return total;
 };
-
-const clearall = () => {};
